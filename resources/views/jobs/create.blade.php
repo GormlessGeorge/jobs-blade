@@ -20,9 +20,12 @@
 
                                 <input type="text" name="title" id="title"
                                        class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                       placeholder="Shift Leader">
+                                       placeholder="Shift Leader" required>
                             </div>
                         </div>
+                        @error('title')
+                        <p class="text-red-500">{{$message}}</p>
+                        @enderror
                     </div>
 
                     <div class="sm:col-span-4">
@@ -33,13 +36,27 @@
 
                                 <input type="text" name="salary" id="salary"
                                        class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                       placeholder="$50.000">
+                                       placeholder="$50.000" required>
                             </div>
                         </div>
+                        @error('salary')
+                        <p class="text-red-500">{{$message}}</p>
+                        @enderror
                     </div>
 
 
                 </div>
+
+{{--                <div class="mt-10">--}}
+{{--                    @if($errors->any())--}}
+{{--                        <ul>--}}
+{{--                            @foreach($errors->all() as $error)--}}
+{{--                                <li class="text-red-500">{{$error}}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+
             </div>
 
 
